@@ -10,7 +10,7 @@
   </head>
   <body class="font-Dana">
     <!-- All App Icons -->
-    <svg>
+    <svg class="hidden">
       <symbol
         id="shopping-cart"
         xmlns="http://www.w3.org/2000/svg"
@@ -69,21 +69,23 @@
       </symbol>
     </svg>
 
-    <header>
-      <div>
+    <header
+      class="flex items-center w-[90%] h-24 pr-10 pl-4 py-5 mx-auto rounded-3xl bg-black/50"
+    >
+      <div class="flex w-full justify-between">
         <!-- Logo and Menu -->
-        <nav>
+        <nav class="flex gap-x-9">
           <!-- Logo -->
           <div>
             <img src="./images/app-logo.png" alt="Golden Coffee logo" />
           </div>
           <!-- Menu -->
-          <ul>
+          <ul class="flex gap-x-9">
             <li><a href="#">صفحه اصلی</a></li>
             <!-- Has Sub -->
             <li><a href="#">فروشگاه</a></li>
             <!-- Submenu -->
-            <ul>
+            <ul class="hidden">
               <li><a href="#">قهوه ویژه</a></li>
               <li><a href="#">ویژه در سطح جهانی</a></li>
               <li><a href="#">قهوه درجه یک</a></li>
@@ -98,9 +100,9 @@
           </ul>
         </nav>
         <!-- Cart & Theme Toggle & Login Link -->
-        <div>
+        <div class="flex">
           <!-- Cart Icon & Theme Switch btn -->
-          <div>
+          <div class="flex gap-x-5">
             <!-- Cart Icon -->
             <div>
               <svg class="w-8 h-8"><use xlink:href="#shopping-cart"></use></svg>
@@ -111,7 +113,7 @@
             </div>
           </div>
           <!-- Login Link -->
-          <a href="#">
+          <a class="flex" href="#">
             <svg class="w-8 h-8">
               <use xlink:href="#arrow-left-end-on-rectangle"></use>
             </svg>
