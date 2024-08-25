@@ -8,7 +8,7 @@
     <link rel="icon" href="./images/fav-icon.png" type="image/png" />
     <title>coffee shop</title>
   </head>
-  <body class="font-Dana">
+  <body class="font-Dana bg-gray-100 dark:bg-zinc-800">
     <!-- All App Icons -->
     <svg class="hidden">
       <symbol
@@ -70,18 +70,22 @@
     </svg>
 
     <header
-      class="flex items-center w-[90%] h-24 pr-10 pl-4 py-5 mx-auto rounded-3xl bg-black/50"
+      class="fixed top-9 left-0 right-0 flex items-center w-[90%] h-24 px-10 py-5 mx-auto rounded-3xl bg-black/50 backdrop-blur-[6px]"
     >
-      <div class="flex w-full justify-between">
+      <div class="flex w-full justify-between items-center">
         <!-- Logo and Menu -->
-        <nav class="flex gap-x-9">
+        <nav class="flex gap-x-9 items-center">
           <!-- Logo -->
           <div>
             <img src="./images/app-logo.png" alt="Golden Coffee logo" />
           </div>
           <!-- Menu -->
-          <ul class="flex gap-x-9">
-            <li><a href="#">صفحه اصلی</a></li>
+          <ul
+            class="flex gap-x-9 items-center text-xl text-gray-300 tracking-tightest"
+          >
+            <li class="font-DanaMedium text-orange-200">
+              <a href="#">صفحه اصلی</a>
+            </li>
             <!-- Has Sub -->
             <li><a href="#">فروشگاه</a></li>
             <!-- Submenu -->
@@ -100,9 +104,9 @@
           </ul>
         </nav>
         <!-- Cart & Theme Toggle & Login Link -->
-        <div class="flex">
+        <div class="flex text-xl gap-x-10 text-orange-200">
           <!-- Cart Icon & Theme Switch btn -->
-          <div class="flex gap-x-5">
+          <div class="flex gap-x-5 items-center">
             <!-- Cart Icon -->
             <div>
               <svg class="w-8 h-8"><use xlink:href="#shopping-cart"></use></svg>
@@ -112,12 +116,14 @@
               <svg class="w-8 h-8"><use xlink:href="#moon"></use></svg>
             </div>
           </div>
+          <!-- Divider Border -->
+          <span class="block w-px h-14 bg-white/20"></span>
           <!-- Login Link -->
-          <a class="flex" href="#">
-            <svg class="w-8 h-8">
+          <a class="flex items-center gap-2.5 tracking-tightest" href="#">
+            <svg class="w-8 h-8 rotate-180">
               <use xlink:href="#arrow-left-end-on-rectangle"></use>
             </svg>
-            ورود | ثبت نام
+            <span> ورود | ثبت‌نام </span>
           </a>
         </div>
       </div>

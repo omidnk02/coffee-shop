@@ -40,3 +40,7 @@
     font-display: swap;
   }
 }
+body {
+  background-image: url(../public/images/headerBgDesktop.png);
+  background-repeat: no-repeat;
+}
