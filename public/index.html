@@ -3,10 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coffee shop</title>
     <link rel="stylesheet" href="./styles/app.css" />
     <link rel="stylesheet" href="../src/input.css" />
     <link rel="icon" href="./images/fav-icon.png" type="image/png" />
-    <title>coffee shop</title>
+    <script type="text/javascript">
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
   <body class="font-Dana bg-gray-100 dark:bg-zinc-800">
     <!-- All App Icons -->
@@ -74,29 +86,35 @@
     >
       <div class="flex w-full justify-between items-center">
         <!-- Logo and Menu -->
-        <nav class="flex gap-x-9 items-center">
+        <nav class="flex gap-x-9 h-14 items-center">
           <!-- Logo -->
           <div>
             <img src="./images/app-logo.png" alt="Golden Coffee logo" />
           </div>
           <!-- Menu -->
           <ul
-            class="flex gap-x-9 items-center text-xl text-gray-300 tracking-tightest"
+            class="flex h-full gap-x-9 text-xl text-gray-300 tracking-tightest child:leading-[56px]"
           >
             <li class="font-DanaMedium text-orange-200">
               <a href="#">صفحه اصلی</a>
             </li>
             <!-- Has Sub -->
-            <li><a href="#">فروشگاه</a></li>
-            <!-- Submenu -->
-            <ul class="hidden">
-              <li><a href="#">قهوه ویژه</a></li>
-              <li><a href="#">ویژه در سطح جهانی</a></li>
-              <li><a href="#">قهوه درجه یک</a></li>
-              <li><a href="#">ترکیبات تجاری</a></li>
-              <li><a href="#">کپسول قهوه</a></li>
-              <li><a href="#">قهوه زینو برزیلی</a></li>
-            </ul>
+            <li class="relative group">
+              <a class="group-hover:text-orange-300 transition-colors" href="#">
+                فروشگاه
+              </a>
+              <!-- Submenu -->
+              <div
+                class="absolute top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible w-52 p-6 space-y-4 rounded-2xl border-t-[3px] text-zinc-700 dark:text-white child:transition-colors child-hover:text-orange-300 text-base border-t-orange-300 bg-white dark:bg-zinc-700 shadow-normal transition-all child:inline-block tracking-normal"
+              >
+                <a href="#">قهوه ویژه</a>
+                <a href="#">ویژه در سطح جهانی</a>
+                <a href="#">قهوه درجه یک</a>
+                <a href="#">ترکیبات تجاری</a>
+                <a href="#">کپسول قهوه</a>
+                <a href="#">قهوه زینو برزیلی</a>
+              </div>
+            </li>
             <li><a href="#">دیکشنری</a></li>
             <li><a href="#">بلاگ</a></li>
             <li><a href="#">درباره ما</a></li>
@@ -109,11 +127,21 @@
           <div class="flex gap-x-5 items-center">
             <!-- Cart Icon -->
             <div>
-              <svg class="w-8 h-8"><use xlink:href="#shopping-cart"></use></svg>
+              <!-- Cart Icon Hover -->
+              <div class="py-3">
+                <svg class="w-8 h-8"><use href="#shopping-cart"></use></svg>
+              </div>
+              <!-- Cart Box -->
+              <div></div>
             </div>
             <!-- Theme Switch btn -->
-            <div>
-              <svg class="w-8 h-8"><use xlink:href="#moon"></use></svg>
+            <div class="cursor-pointer" id="toggle-theme">
+              <svg class="inline-block dark:hidden w-8 h-8">
+                <use href="#moon"></use>
+              </svg>
+              <svg class="hidden dark:inline-block w-8 h-8">
+                <use href="#sun"></use>
+              </svg>
             </div>
           </div>
           <!-- Divider Border -->
@@ -121,7 +149,7 @@
           <!-- Login Link -->
           <a class="flex items-center gap-2.5 tracking-tightest" href="#">
             <svg class="w-8 h-8 rotate-180">
-              <use xlink:href="#arrow-left-end-on-rectangle"></use>
+              <use href="#arrow-left-end-on-rectangle"></use>
             </svg>
             <span> ورود | ثبت‌نام </span>
           </a>
