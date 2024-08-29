@@ -79,10 +79,24 @@
           d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75"
         />
       </symbol>
+      <symbol
+        id="chevron-left"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 19.5 8.25 12l7.5-7.5"
+        />
+      </symbol>
     </svg>
 
     <header
-      class="fixed top-9 left-0 right-0 flex items-center w-[90%] h-24 px-10 py-5 mx-auto rounded-3xl bg-black/50 backdrop-blur-[6px]"
+      class="fixed top-9 left-0 right-0 flex items-center w-[90%] h-24 pr-10 pl-6 py-5 mx-auto rounded-3xl bg-black/50 backdrop-blur-[6px]"
     >
       <div class="flex w-full justify-between items-center">
         <!-- Logo and Menu -->
@@ -122,17 +136,38 @@
           </ul>
         </nav>
         <!-- Cart & Theme Toggle & Login Link -->
-        <div class="flex text-xl gap-x-10 text-orange-200">
+        <div class="flex text-xl gap-x-5 text-orange-200">
           <!-- Cart Icon & Theme Switch btn -->
-          <div class="flex gap-x-5 items-center">
+          <div class="flex gap-x-5 items-center ml-4">
             <!-- Cart Icon -->
-            <div>
+            <div class="relative group">
               <!-- Cart Icon Hover -->
-              <div class="py-3">
+              <div class="py-3 cursor-pointer">
                 <svg class="w-8 h-8"><use href="#shopping-cart"></use></svg>
               </div>
-              <!-- Cart Box -->
-              <div></div>
+              <!-- Cart Box opacity 0 -->
+              <div
+                class="absolute top-full -left-20 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-[400px] p-5 space-y-4 rounded-2xl border-t-[3px] border-t-orange-300 bg-white dark:bg-zinc-700 shadow-normal transition-all tracking-normal"
+              >
+              
+                <!-- Cart Header -->
+                <div
+                  class="flex items-center justify-between font-DanaMedium text-xs tracking-tighter"
+                >
+                  <span class="text-gray-300">1 مورد</span>
+                  <a href="#" class="flex items-center text-orange-300">
+                    مشاهده سبد خرید
+                    <svg class="w-4 h-4"><use href="#chevron-left"></use></svg>
+                  </a>
+                </div>
+
+                <!-- Cart Body -->
+                <div></div>
+
+                <!-- Cart Footer -->
+                <div></div>
+
+              </div>
             </div>
             <!-- Theme Switch btn -->
             <div class="cursor-pointer" id="toggle-theme">
@@ -147,7 +182,10 @@
           <!-- Divider Border -->
           <span class="block w-px h-14 bg-white/20"></span>
           <!-- Login Link -->
-          <a class="flex items-center gap-2.5 tracking-tightest" href="#">
+          <a
+            class="flex items-center gap-2.5 tracking-tightest hover:bg-brown-300/20 px-6 rounded-xl hover:rounded-xl transition-colors"
+            href="#"
+          >
             <svg class="w-8 h-8 rotate-180">
               <use href="#arrow-left-end-on-rectangle"></use>
             </svg>
