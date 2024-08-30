@@ -32,6 +32,9 @@ module.exports = {
       letterSpacing: {
         tightest: "-0.065em",
       },
+      spacing: {
+        30: "7.5rem",
+      },
     },
   },
   plugins: [
