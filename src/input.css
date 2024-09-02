@@ -37,4 +37,9 @@
 body {
   background-image: url(../public/images/headerBgDesktop.webp);
   background-repeat: no-repeat;
+  margin-bottom: 1400px;
+}
+.cart__body {
+  scrollbar-width: thin;
+  scrollbar-color: #fed7aa #ffffff00;
 }
